@@ -1,90 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden bard Suite</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2 {
-            margin-top: 0;
-        }
-        section {
-            padding: 20px 0;
-            text-align: center;
-        }
-        .section-heading {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .section-content {
-            font-size: 18px;
-            color: #666;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Golden bard Suite</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f5f5f5;
+            }
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 20px 0;
+                text-align: center;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1, h2 {
+                margin-top: 0;
+            }
+            section {
+                padding: 20px 0;
+                text-align: center;
+            }
+            .section-heading {
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: #333;
+            }
+            .section-content {
+                font-size: 18px;
+                color: #666;
+            }
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 20px 0;
+            }
+            .language-selector {
+                margin-top: 20px;
+            }
+            .language-selector button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-right: 10px;
+                outline: none;
+                padding: 0;
+            }
+            .language-selector button img {
+                width: 25px;
+                height: auto;
+                border: 1px solid #000;
+                border-radius: 3px;
+                transition: transform 0.3s ease-in-out;
+            }
+            .language-selector button:hover img {
+                transform: scale(1.1);
+            }
+        </style>
+    </head>
 <body>
     <header>
-        <h1>Golden Bard Suite</h1>
+        <h1 id="title_en">Golden Bard Suite</h1>
+        <h1 id="title_hu" style="display: none;">Golden Bard Suite</h1>
         <p>Welcome to your home away from home!</p>
+        <div class="language-selector">
+            <button onclick="switchLanguage('en')"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" alt="English Flag"></button>
+            <button onclick="switchLanguage('hu')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/1280px-Flag_of_Hungary.svg.png" alt="Hungarian Flag"></button>
     </header>
     <div class="container">
         <section>
-            <h2 class="section-heading">About</h2>
-            <p class="section-content">We're delighted to welcome you to our cozy retreat located in Budapest. Whether your visit is for a peaceful escape, exploring nearby attractions, or simply seeking serenity, we've crafted this place with your comfort and pleasure at the forefront of our minds..</p>
+            <h2 class="section-heading" id="about_heading_en">About</h2>
+            <h2 class="section-heading" id="about_heading_hu" style="display: none;">Rolkunk</h2>
+            <p class="section-content" id="about_en">We're delighted to welcome you to our cozy retreat located in Budapest. Whether your visit is for a peaceful escape, exploring nearby attractions, or simply seeking serenity, we've crafted this place with your comfort and pleasure at the forefront of our minds.</p>
+            <p class="section-content" id="about_hu" style="display: none;">TODO: magyarul</p>
         </section>
         <section>
             <h2 class="section-heading">Wifi</h2>
-            <p class="section-content">Network name: Golden-Bard-Suite </p>
-            <p class="section-content">Password: GoldenBardSuite1848 </p>
+            <p class="section-content" id="wifi_en">Network name: Golden-Bard-Suite <br> Password: GoldenBardSuite1848</p>
+            <p class="section-content" id="wifi_hu" style="display: none;"> TODO: magyarul</p>
         </section>
         <section>
-            <h2 class="section-heading">Parking</h2>
-            <p class="section-content">Complimentary parking is provided on the ground floor. Parking spot number 11 is reserved exclusively for our guests.</p>
+            <h2 class="section-heading" id="parking_heading_en" >Parking</h2>
+            <h2 class="section-heading" id="parking_heading_hu" style="display: none;">Parkolas</h2>
+            <p class="section-content" id="parking_content_en">Complimentary parking is provided on the ground floor. Parking spot number 11 is reserved exclusively for our guests.</p>
+            <p class="section-content" id="parking_content_hu" style="display: none;">TODO: magyarul</p>
             <img src="pictures/parking.jpeg" alt="Parking" style="max-height: 500px; max-width: 250px;">
         </section>
         <section>
-            <h2 class="section-heading">Safety</h2>
-            <p class="section-content">Smoking is not permitted indoors; however, it is permitted solely on the balcony. Smoke detectors are installed in every room. </p>
-            <p class="section-content">In the event of a fire, a fire extinguisher can be found in the upper section of the black display cabinet near the entrance to the living room. </p>
-            <p class="section-content">Additionally, a first aid kit is also stored in the same cabinet.</p>
+            <h2 class="section-heading" id="safety_heading_en">Safety</h2>
+            <h2 class="section-heading" id="safety_heading_hu" style="display: none;">Biztonsag?</h2>
+            <p class="section-content" id="safety_content1_en">Smoking is not permitted indoors; however, it is permitted solely on the balcony. Smoke detectors are installed in every room. </p>
+            <p class="section-content" id="safety_content2_en">In the event of a fire, a fire extinguisher can be found in the upper section of the black display cabinet near the entrance to the living room. </p>
+            <p class="section-content" id="safety_content3_en">Additionally, a first aid kit is also stored in the same cabinet.</p>
+            
+            <p class="section-content" id="safety_content1_hu" style="display: none;">TODO: magyarul</p>
+            <p class="section-content" id="safety_content2_hu" style="display: none;">TODO: magyarul</p>
+            <p class="section-content" id="safety_content3_hu" style="display: none;">TODO: magyarul</p>
         </section>
         <section>
-            <h2 class="section-heading">Bathroom</h2>
-            <p class="section-content">Please ensure that toilet paper is disposed of exclusively in the toilet. For all other waste, there is a trash can available in the bathroom and another one located next to the toilet.</p>
+            <h2 class="section-heading" id="bathroom_heading_en">Bathroom</h2>
+            <h2 class="section-heading" id="bathroom_heading_hu" style="display: none;">Mosdo</h2>
+            <p class="section-content" id="bathroom_content_en">Please ensure that toilet paper is disposed of exclusively in the toilet. For all other waste, there is a trash can available in the bathroom and another one located next to the toilet.</p>
+            <p class="section-content" id="bathroom_content_hu" style="display: none;">TODO: magyarul</p>
         </section>
         <section>
-            <h2 class="section-heading">Contact</h2>
-            <p class="section-content">TODO: hellorent contact?</p>
+            <h2 class="section-heading" id="transport_heading_en">Transport</h2>
+            <h2 class="section-heading" id="transport_heading_hu" style="display: none;">Kozlekedes</h2>
+            <p class="section-content" id="transport_content_en">TODO: villamosok, buszok stb</p>
+            <p class="section-content" id="transport_content_hu" style="display: none;">TODO: magyarul</p>
         </section>
-
+        <section>
+            <h2 class="section-heading" id="contact_heading_en">Contact</h2>
+            <h2 class="section-heading" id="contact_heading_hu" style="display: none;">Kapcsolat</h2>
+            <p class="section-content" id="contact_content_en">TODO: helllorent contact</p>
+            <p class="section-content" id="contact_content_hu" style="display: none;">TODO: magyarul</p>
+        </section>
     </div>
     <footer>
         <p>&copy; 2024 Golden Bard Suite. All rights reserved.</p>
     </footer>
+    <script>
+        function switchLanguage(language) {
+            const elementsEn = document.querySelectorAll('[id$="_en"]');
+            const elementsHu = document.querySelectorAll('[id$="_hu"]');
+            
+            if (language === 'en') {
+                elementsEn.forEach((element) => {
+                    element.style.display = 'block';
+                });
+                
+                elementsHu.forEach((element) => {
+                    element.style.display = 'none';
+                });
+            } else if (language === 'hu') {
+                elementsEn.forEach((element) => {
+                    element.style.display = 'none';
+                });
+                
+                elementsHu.forEach((element) => {
+                    element.style.display = 'block';
+                });
+        }
+    }
+    </script>
 </body>
 </html>
+
 
